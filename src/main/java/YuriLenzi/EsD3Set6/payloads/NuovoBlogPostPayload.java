@@ -13,4 +13,5 @@ import lombok.ToString;
 public class NuovoBlogPostPayload {
     private String categoria, titolo, contenuto;
     private Integer tempoLettura;
+    private Long idAutore;
 }

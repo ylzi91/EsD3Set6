@@ -1,12 +1,12 @@
 package YuriLenzi.EsD3Set6.controllers;
 
-import YuriLenzi.EsSet6D2.entities.BlogPost;
-import YuriLenzi.EsSet6D2.payloads.NuovoBlogPostPayload;
-import YuriLenzi.EsSet6D2.services.BlogPostService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import YuriLenzi.EsD3Set6.entities.BlogPost;
+import YuriLenzi.EsD3Set6.payloads.NuovoBlogPostPayload;
+import YuriLenzi.EsD3Set6.services.BlogPostService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
@@ -16,8 +16,11 @@ public class BlogPostController {
     BlogPostService blogPostService;
 
     @GetMapping("/blogposts")
-    public List<BlogPost> vediTuttiIBlogPost() {
-        return blogPostService.trovaTutti();
+    public Page<BlogPost> vediTuttiIBlogPost(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size
+    ) {
+        return blogPostService.trovaTutti(page, size);
     }
 
     @PostMapping("/blogposts")

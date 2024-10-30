@@ -25,12 +25,13 @@ public class BlogPost {
     @ManyToOne
     private Autore autore;
 
-    public BlogPost(String categoria, String titolo, String contenuto, int tempoLettura) {
+    public BlogPost(String categoria, String titolo, String contenuto, int tempoLettura, Autore autore) {
         this.categoria = categoria;
         this.titolo = titolo;
         this.contenuto = contenuto;
         this.tempoLettura = tempoLettura;
         this.immagine = "https://fastly.picsum.photos/id/921/200/300";
+        this.autore = autore;
     }
 
 }

@@ -1,8 +1,9 @@
 package YuriLenzi.EsD3Set6.controllers;
 
-import YuriLenzi.EsSet6D2.entities.Autore;
-import YuriLenzi.EsSet6D2.payloads.NuovoAutorePayload;
-import YuriLenzi.EsSet6D2.services.AutoreService;
+
+import YuriLenzi.EsD3Set6.entities.Autore;
+import YuriLenzi.EsD3Set6.payloads.NuovoAutorePayload;
+import YuriLenzi.EsD3Set6.services.AutoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
