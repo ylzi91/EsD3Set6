@@ -1,5 +1,6 @@
 package YuriLenzi.EsD3Set6.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,6 +24,7 @@ public class BlogPost {
     private String contenuto;
     private Integer tempoLettura;
     @ManyToOne
+    @JsonBackReference
     private Autore autore;
 
     public BlogPost(String categoria, String titolo, String contenuto, int tempoLettura, Autore autore) {

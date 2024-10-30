@@ -1,21 +1,17 @@
 package YuriLenzi.EsD3Set6.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "autori")
 @Getter
 @Setter
-@ToString
 @NoArgsConstructor
 public class Autore {
     @Id
@@ -23,6 +19,8 @@ public class Autore {
     private long id;
     private String nome, cognome, email, avatar;
     private LocalDate dataNascita;
+    @OneToMany(mappedBy = "autore")
+    private List<BlogPost> blogPosts;
 
     public Autore(String nome, String cognome, String email, LocalDate dataNascita) {
         this.nome = nome;
