@@ -20,6 +20,11 @@ public class AutoreController {
         return autoreService.vediAutori();
     }
 
+    @GetMapping("/autori/{idAutore}")
+    public Autore findById(@PathVariable long idAutore) {
+        return autoreService.findById(idAutore);
+    }
+
     @PostMapping("/autori")
     public Autore aggiungiAutore(@RequestBody NuovoAutorePayload body) {
         return autoreService.salvaAutore(body);
